@@ -1,0 +1,15 @@
+<!-- templates/edit_post.html -->
+{% extends "layout.html" %}
+
+{% block content %}
+    <h2>編輯文章</h2>
+    <form method="POST">
+        <label for="title">標題:</label>
+        <input type="text" name="title" value="{{ post.title }}" required><br><br>
+        <label for="author">作者:</label>
+        <input type="text" name="author" value="{{ post.author }}" required><br><br>
+        <label for="content">內容:</label><br>
+        <textarea name="content" rows="10" required>{{ post.content }}</textarea><br><br>
+        <button type="submit">儲存文章</button>
+    </form>
+{% endblock %}

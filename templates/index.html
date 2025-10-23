@@ -1,0 +1,15 @@
+<!-- templates/index.html -->
+{% extends "layout.html" %}
+
+{% block content %}
+    <h2>部落格文章列表</h2>
+    <ul>
+        {% for post in posts %}
+            <li>
+                <h3><a href="{{ url_for('show_post', post_id=post.id) }}">{{ post.title }}</a></h3>
+                <p><strong>作者:</strong> {{ post.author }}</p>
+                <p>{{ post.content[:100] }}...</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
