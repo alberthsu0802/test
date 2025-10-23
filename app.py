@@ -74,9 +74,9 @@ class PostAPI(Resource):
 # API 路由設定
 api.add_resource(PostAPI, '/api/posts', '/api/posts/<int:post_id>')
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
+# @app.before_first_request
+# def create_tables():
+#     db.create_all()
 
 # 前端路由
 @app.route('/')
